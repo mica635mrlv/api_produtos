@@ -18,6 +18,6 @@ router.get('/:id', clientController.getClientById);
 router.get('/name/:name', clientController.getClientByName);
 
 // 4º Rota para criar um novo usuário
-// router.post('/', userController.createUser);
+router.post('/', clientController.createClient);
 
 module.exports = router;
