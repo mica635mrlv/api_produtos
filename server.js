@@ -1,6 +1,7 @@
 const express = require('express')
 
 const clientRoutes = require('./src/routes/clientRoutes');
+const productRoutes = require('./src/routes/productRoutes');
 
 const app = express();
 
@@ -13,6 +14,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/api/clients', clientRoutes);
+app.use('/api/products', productRoutes);
 
 app.listen(porta, () => {
     console.log(`Servidor rodando em http://localhost:${porta}`);

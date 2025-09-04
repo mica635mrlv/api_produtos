@@ -17,7 +17,13 @@ router.get('/:id', clientController.getClientById);
 // 3º Rota para obter dados de um cliente pelo nome
 router.get('/name/:name', clientController.getClientByName);
 
-// 4º Rota para criar um novo usuário
+// 4º Rota para criar um novo cliente
 router.post('/', clientController.createClient);
+
+// 5º Rota para atualizar dados do cliente
+router.put('/:id', clientController.updatedClient);
+
+// 6º Rota para deletar dados ou clientes
+router.delete('/:id', clientController.removedClient);
 
 module.exports = router;

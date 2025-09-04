@@ -38,21 +38,49 @@ const getClientByName = (req, res) => {
 // Método do controlador para criar outro usuário
 const createClient = (req, res) => {
 
-// Pegando os dados que foram enviados pelo body ou corpo da req
-const { name, email, telefone, endereco, dataCadastro, ativo} = req.body; // Deestruturação Javascript
+    // Pegando os dados que foram enviados pelo body ou corpo da req
+    const { name, email, telefone, endereco, dataCadastro, ativo } = req.body; // Deestruturação Javascript
 
-// Validar se os dados estão vazios
-if (!name || !email || !telefone || !endereco || !dataCadastro || !ativo) {
-         return res.status(400).json({ mensagem: 'Todos os dados são obrigatórios!' });
-     } else {
-         const newUser = userModel.create({name, email, telefone, endereco, dataCadastro, ativo});
-         res.status(201).json(newClient);
-     }
+    // Validar se os dados estão vazios
+    if (!name || !email || !telefone || !endereco || !dataCadastro || !ativo) {
+        return res.status(400).json({ mensagem: 'Todos os dados são obrigatórios!' });
+    } else {
+        const newClient = clientModel.create({ name, email, telefone, endereco, dataCadastro, ativo });
+        res.status(201).json(newClient);
+    }
+}
+
+const updatedClient = (req, res) => {
+
+    const id = parseInt(req.params.id);  // pegar id do cliente
+    const updatedData = req.body;  // pegar dados do body
+
+    const updatedClient = clientModel.update(id, updatedData);
+
+    if (updatedClient) {
+        res.status(200).json(updatedClient);
+    } else {
+        res.status(404).json({ mensagem: 'Usuário não encontrado no banco de dados!' });
+    }
+}
+
+const removedClient = (req, res) => {
+
+    const id = parseInt(req.params.id);
+    const removedClient = clientModel.remove(id);
+
+    if (removedClient) {
+        res.status(200).json(removedClient);
+    } else {
+        res.status(404).json({ mensagem: 'Usuário não encontrado no banco de dados!' });
+    }
 }
 
 module.exports = {
     getAllClients,
     getClientById,
     getClientByName,
-    createClient
+    createClient,
+    updatedClient,
+    removedClient
 }
