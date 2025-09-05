@@ -1,29 +1,29 @@
 let products = [
     {
         id: 1,
-        name: 'Regina',
-        email: 'reginalp@gmail.com.br',
-        telefone: '11 96181-3456',
-        endereco: 'Via Capricornio, 4, França, Jandira, SP, 02276-130',
-        dataCadastro: '2025-08-27 08:54',
+        name: 'Notebook Dell Inspiron 15 3000',
+        descricao: 'Notebook com processador Intel Core i5, 8GB de RAM e 256GB de SSD',
+        preco: 3999.99,
+        categoria: 'Informática',
+        estoque: 100,
         ativo: 'true'
     },
     {
         id: 2,
-        name: 'Marcelino',
-        email: 'marcelinolv@gmail.com.br',
-        telefone: '11 96383-8906',
-        endereco: 'Rua Leão, 133, Lodres, Jandira, SP, 06343-160',
-        dataCadastro: '2025-08-28 10:01',
+        name: 'Monitor Samsung LED 23.8 polegadas',
+        descricao: 'Monitor LED com resolução Full HD e tempo de resposta de 5ms',
+        preco: 799.99,
+        categoria: 'Informática',
+        estoque: 50,
         ativo: 'true'
     },
     {
         id: 3,
-        name: 'Manuela',
-        email: 'manuelaft@gmail.com.br',
-        telefone: '11 99031-2476',
-        endereco: 'Av. Bandeirantes, 78, California, Jandira, SP, 06345-120',
-        dataCadastro: '2025-09-02 19:15',
+        name: 'Caixa de Som JBL Flip 5',
+        descricao: 'Caixa de som portátil com Bluetooth, resistente à água e bateria com duração de até 12 horas',
+        preco: 499.99,
+        categoria: 'Eletrônicos',
+        estoque: 5,
         ativo: 'false'
     }
 ]

@@ -1,16 +1,13 @@
 const productModel = require('../model/productModel');
 
-// Método do controlador para listar todos os usuários
-const getAllProducts = (req, res) => { // vai ter uma rota na API - antiga: (http://localhost:8000/); nova: (http://localhost:8000/users) rota p/ as funcionalidade dos usuários
+const getAllProducts = (req, res) => { 
     const products = productModel.findAll();
     res.status(200).json(products);
 }
 
-// Método do controlador para listar todos os usuários
 const getProductById = (req, res) => {
-    // Pegando o id que foi enviado na requisição
     const id = parseInt(req.params.id);
-    // Chamado o método findById do userModel
+
     const product = productModel.findById(id);
 
     if (product) {
@@ -20,12 +17,9 @@ const getProductById = (req, res) => {
     }
 }
 
-// Método do controlador para listar todos os usuários
 const getProductByName = (req, res) => {
-
     const name = req.params.name;
 
-    // Chamado o método findById do userModel
     const product = productModel.findByName(name);
 
     if (product) {
@@ -35,25 +29,21 @@ const getProductByName = (req, res) => {
     }
 }
 
-// Método do controlador para criar outro usuário
 const createProduct = (req, res) => {
+    const { name, descricao, preco, categoria, estoque, ativo } = req.body;
 
-    // Pegando os dados que foram enviados pelo body ou corpo da req
-    const { name, email, telefone, endereco, dataCadastro, ativo } = req.body; // Deestruturação Javascript
-
-    // Validar se os dados estão vazios
-    if (!name || !email || !telefone || !endereco || !dataCadastro || !ativo) {
+    if (!name || !descricao || !preco || !categoria || !estoque || !ativo) {
         return res.status(400).json({ mensagem: 'Todos os dados são obrigatórios!' });
     } else {
-        const newProduct = productModel.create({ name, email, telefone, endereco, dataCadastro, ativo });
+        const newProduct = productModel.create({ name, descricao, preco, categoria, estoque, ativo });
         res.status(201).json(newProduct);
     }
 }
 
 const updatedProduct = (req, res) => {
 
-    const id = parseInt(req.params.id);  // pegar id do cliente
-    const updatedData = req.body;  // pegar dados do body
+    const id = parseInt(req.params.id);
+    const updatedData = req.body;
 
     const updatedProduct = productModel.update(id, updatedData);
 
