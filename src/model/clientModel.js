@@ -1,32 +1,4 @@
-let clients = [
-    {
-        id: 1,
-        name: 'Regina',
-        email: 'reginalp@gmail.com.br',
-        telefone: '11 96181-3456',
-        endereco: 'Via Capricornio, 4, França, Jandira, SP, 02276-130',
-        dataCadastro: '2025-08-27 08:54',
-        ativo: 'true'
-    },
-    {
-        id: 2,
-        name: 'Marcelino',
-        email: 'marcelinolv@gmail.com.br',
-        telefone: '11 96383-8906',
-        endereco: 'Rua Leão, 133, Lodres, Jandira, SP, 06343-160',
-        dataCadastro: '2025-08-28 10:01',
-        ativo: 'true'
-    },
-    {
-        id: 3,
-        name: 'Manuela',
-        email: 'manuelaft@gmail.com.br',
-        telefone: '11 99031-2476',
-        endereco: 'Av. Bandeirantes, 78, California, Jandira, SP, 06345-120',
-        dataCadastro: '2025-09-02 19:15',
-        ativo: 'false'
-    }
-]
+const clients = require("./clients.json");
 
 const findAll = () => {
     return clients;
@@ -50,6 +22,10 @@ const create = (newClient) => {
 
 const update = (id, updatedData) => {
     const index = clients.findIndex(client => client.id === id);
+    
+    if (index === -1) {
+        return null;
+    }
 
     clients[index] = { ...clients[index], ...updatedData };
     return clients[index];
@@ -57,6 +33,10 @@ const update = (id, updatedData) => {
 
 const remove = (id) => {
     const index = clients.findIndex(client => client.id === id);
+
+    if (index === -1) {
+        return null;
+    }
 
     const removeClient = clients.splice(index, 1);
     return removeClient[0];
@@ -70,4 +50,3 @@ module.exports = {
     update,
     remove
 }
-

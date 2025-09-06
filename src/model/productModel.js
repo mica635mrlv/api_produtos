@@ -1,32 +1,4 @@
-let products = [
-    {
-        id: 1,
-        name: 'Notebook Dell Inspiron 15 3000',
-        descricao: 'Notebook com processador Intel Core i5, 8GB de RAM e 256GB de SSD',
-        preco: 3999.99,
-        categoria: 'Informática',
-        estoque: 100,
-        ativo: 'true'
-    },
-    {
-        id: 2,
-        name: 'Monitor Samsung LED 23.8 polegadas',
-        descricao: 'Monitor LED com resolução Full HD e tempo de resposta de 5ms',
-        preco: 799.99,
-        categoria: 'Informática',
-        estoque: 50,
-        ativo: 'true'
-    },
-    {
-        id: 3,
-        name: 'Caixa de Som JBL Flip 5',
-        descricao: 'Caixa de som portátil com Bluetooth, resistente à água e bateria com duração de até 12 horas',
-        preco: 499.99,
-        categoria: 'Eletrônicos',
-        estoque: 5,
-        ativo: 'false'
-    }
-]
+const products = require("./products.json");
 
 const findAll = () => {
     return products;
@@ -51,12 +23,20 @@ const create = (newProduct) => {
 const update = (id, updatedData) => {
     const index = products.findIndex(product => product.id === id);
 
+    if (index === -1) {
+        return null;
+    }
+
     products[index] = { ...products[index], ...updatedData };
     return products[index];
 }
 
 const remove = (id) => {
     const index = products.findIndex(product => product.id === id);
+
+    if (index === -1) {
+        return null;
+    }
 
     const removeProduct = products.splice(index, 1);
     return removeProduct[0];

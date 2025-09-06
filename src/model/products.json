@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "name": "Notebook",
+        "descricao": "Notebook Dell Inspiron 15 com processador Intel Core i5, 8GB de RAM e 256GB de SSD",
+        "preco": 3999.99,
+        "categoria": "Informática",
+        "estoque": 100,
+        "ativo": true
+    },
+    {
+        "id": 2,
+        "name": "Monitor",
+        "descricao": "Monitor Samsung LED 23.8 pol. com resolução Full HD e tempo de resposta de 5ms",
+        "preco": 799.99,
+        "categoria": "Informática",
+        "estoque": 50,
+        "ativo": true
+    },
+    {
+        "id": 3,
+        "name": "Caixa de Som",
+        "descricao": "Caixa de som JBL portátil com Bluetooth, resistente à água e bateria com duração de até 12 horas",
+        "preco": 499.99,
+        "categoria": "Eletrônicos",
+        "estoque": 5,
+        "ativo": false
+    }
+]

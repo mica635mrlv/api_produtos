@@ -10,7 +10,7 @@ app.use(express.json());
 const porta = 8000;
 
 app.get('/', (req, res) => {
-    res.send("API de Usuários está funcionando")
+    res.send("Teste: API-Produtos está funcionando")
 })
 
 app.use('/api/clients', clientRoutes);

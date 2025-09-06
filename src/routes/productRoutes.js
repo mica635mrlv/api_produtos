@@ -1,29 +1,27 @@
-// gerenciar as rotas de usuário (rotas que o usuário pode acessar) dentro da API
-
 const express = require('express');
 
 const router = express.Router();
 
 const productController = require('../controller/productController');
 
-// Criando as rotas da nossa API
+// Rotas da API
 
-// 1º Rota para obter todos os clientes
-router.get('/', productController.getAllProducts); // passar o caminho + é oq vc quer q ele faça
+// 1º Rota para obter todos os produtos
+router.get('/', productController.getAllProducts);
 
-// 2º Rota para obter dados de um cliente por ID
+// 2º Rota para obter dados de um produto pelo ID
 router.get('/:id', productController.getProductById);
 
-// 3º Rota para obter dados de um cliente pelo nome
+// 3º Rota para obter dados de um produto pelo nome
 router.get('/name/:name', productController.getProductByName);
 
-// 4º Rota para criar um novo cliente
+// 4º Rota para criar um novo produto
 router.post('/', productController.createProduct);
 
-// 5º Rota para atualizar dados do cliente
+// 5º Rota para atualizar dados do produto pelo ID
 router.put('/:id', productController.updatedProduct);
 
-// 6º Rota para deletar dados ou clientes
+// 6º Rota para deletar produtos pelo ID
 router.delete('/:id', productController.removedProduct);
 
 module.exports = router;
