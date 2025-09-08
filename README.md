@@ -1,9 +1,5 @@
 ﻿# Projeto API-Produtos
 
-![](./img/readme.png)
-
-## Descrição
-
 Este projeto consiste em uma API REST para gerenciamento de produtos e clientes de uma loja virtual, desenvolvido no curso Técnico em Desenvolvimento de Sistemas do SENAI. O objetivo é simular o desenvolvimento de um back-end real, aplicando conceitos de arquitetura MVC (Model, Controller, Routes) e boas práticas de desenvolvimento de APIs.
 
 A API permite:
